@@ -1,4 +1,4 @@
-**Shows inputs and outputs working for a custom task. The inputs and outputs are defined by the task class itself.**
+**Shows inputs and outputs working for a custom task. The inputs and outputs are defined outside the task class.**
 
 The `JoinQuote` class defined in *build.gradle* takes as input two files, and produces an output file
 containing the joined text from input files.

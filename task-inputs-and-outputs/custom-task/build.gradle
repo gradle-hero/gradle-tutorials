@@ -5,13 +5,10 @@ plugins {
 abstract class JoinQuote extends DefaultTask {
     @InputFile
     final abstract RegularFileProperty firstInputFile = project.objects.fileProperty().convention(project.layout.projectDirectory.file('quote-part-1.txt'))
-
     @InputFile
     final abstract RegularFileProperty secondInputFile = project.objects.fileProperty().convention(project.layout.projectDirectory.file('quote-part-2.txt'))
-
     @OutputFile
     final abstract RegularFileProperty outputFile = project.objects.fileProperty().convention(project.layout.buildDirectory.file('full-quote.txt'))
-
     @TaskAction
     void join() {
         outputFile.get().asFile.text = firstInputFile.get().asFile.text + secondInputFile.get().asFile.text
