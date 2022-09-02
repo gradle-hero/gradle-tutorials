@@ -4,9 +4,15 @@ plugins {
 
 abstract class AddQuotationMarks extends DefaultTask {
     @InputFile
-    final abstract RegularFileProperty inputFile = project.objects.fileProperty().convention(project.layout.projectDirectory.file('quote.txt'))
+    abstract RegularFileProperty getInputFile()
     @OutputFile
-    final abstract RegularFileProperty outputFile = project.objects.fileProperty().convention(project.layout.buildDirectory.file('quote-with-quotation-marks.txt'))
+    abstract RegularFileProperty getOutputFile()
+
+    AddQuotationMarks() {
+        inputFile.convention(project.layout.projectDirectory.file('quote.txt'))
+        outputFile.convention(project.layout.buildDirectory.file('quote-with-quotation-marks.txt'))
+    }
+
     @TaskAction
     void join() {
         outputFile.get().asFile.text = "\"${inputFile.get().asFile.text}\""
@@ -17,11 +23,16 @@ TaskProvider<AddQuotationMarks> addQuotationMarks = tasks.register('addQuotation
 
 abstract class AddQuoteSource extends DefaultTask {
     @Input
-    final abstract Property<String> source = project.objects.property(String)
+    abstract Property<String> getSource()
     @InputFile
-    final abstract RegularFileProperty inputFile = project.objects.fileProperty()
+    abstract RegularFileProperty getInputFile()
     @OutputFile
-    final abstract RegularFileProperty outputFile = project.objects.fileProperty().convention(project.layout.buildDirectory.file('quote-with-source.txt'))
+    abstract RegularFileProperty getOutputFile()
+
+    AddQuoteSource() {
+        outputFile.convention(project.layout.buildDirectory.file('quote-with-source.txt'))
+    }
+
     @TaskAction
     void join() {
         outputFile.get().asFile.text = "${inputFile.get().asFile.text}\n\n${source.get()}"
