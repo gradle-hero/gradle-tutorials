@@ -44,6 +44,9 @@ jobs:
         working-directory: task-inputs-and-outputs/linking-tasks
       - name: Build with Gradle
         run: ./gradlew build
+        working-directory: task-inputs-and-outputs/linking-tasks-java-plugin
+      - name: Build with Gradle
+        run: ./gradlew build
         working-directory: task-inputs-and-outputs/pre-packaged-task
       - name: Build with Gradle
         run: ./gradlew build
