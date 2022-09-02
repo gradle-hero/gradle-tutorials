@@ -4,7 +4,7 @@ plugins {
 
 gradlePlugin {
     plugins {
-        simplePlugin {
+        quotesPlugin {
             id = 'com.tomgregory.quotes'
             implementationClass = 'com.tomgregory.QuotesPlugin'
         }
