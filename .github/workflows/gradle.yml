@@ -25,26 +25,26 @@ jobs:
         run: ./gradlew build
         working-directory: groovy-vs-kotlin/kotlin
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew emphasiseQuote
         working-directory: task-inputs-and-outputs/ad-hoc-task
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew allTypes
         working-directory: task-inputs-and-outputs/all-types-custom-task
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew joinQuote
         working-directory: task-inputs-and-outputs/custom-task
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew joinQuote
         working-directory: task-inputs-and-outputs/custom-task-define-inputs-and-outputs-externally
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew addQuoteSource
         working-directory: task-inputs-and-outputs/linking-tasks
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew addQuoteSource
         working-directory: task-inputs-and-outputs/linking-tasks-java-plugin
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew copyFile
         working-directory: task-inputs-and-outputs/pre-packaged-task
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew addQuoteSource
         working-directory: task-inputs-and-outputs/sharing-outputs-between-projects
