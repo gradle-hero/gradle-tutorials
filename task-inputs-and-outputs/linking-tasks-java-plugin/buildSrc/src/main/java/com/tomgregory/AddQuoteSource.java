@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-abstract class AddQuoteSource extends DefaultTask {
+public abstract class AddQuoteSource extends DefaultTask {
     @Input
-    abstract Property<String> getSource();
+    public abstract Property<String> getSource();
 
     @InputFile
     abstract RegularFileProperty getInputFile();

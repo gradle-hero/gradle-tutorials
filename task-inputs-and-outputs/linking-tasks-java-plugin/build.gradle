@@ -1,8 +1,0 @@
-plugins {
-    id 'base'
-    id 'com.tomgregory.quotes'
-}
-
-tasks.named('addQuoteSource').configure {
-    source = 'Dr. No (1963)'
-}
